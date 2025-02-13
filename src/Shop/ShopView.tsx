@@ -41,30 +41,33 @@ const ShopView = () => {
         }
       })
 
-      const json = await resp.json()
+      if (resp.status == 200) {
+        const json = await resp.json()
+        
+        console.log(json);
+        setProducts(() => {
+          return json.reduce((acc, {id, name, category, description, price, quantity, image, sizes }) => {
+            const product: Product = {
+              id,
+              name,
+              category,
+              description,
+              price,
+              quantity,
+              image, 
+              sizes
+  
+            } 
+  
+            acc.push(product)
+  
+  
+            return acc
+          }, [])
+        })
 
-      console.log(json);
+      }
 
-      setProducts(() => {
-        return json.reduce((acc, {id, name, category, description, price, quantity, image, sizes }) => {
-          const product: Product = {
-            id,
-            name,
-            category,
-            description,
-            price,
-            quantity,
-            image, 
-            sizes
-
-          } 
-
-          acc.push(product)
-
-
-          return acc
-        }, [])
-      })
       
     } catch (error) {
       console.log(error);
