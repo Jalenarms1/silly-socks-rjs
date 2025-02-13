@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+body {
+  background-color: rgb(249, 249, 249);
+}
+
+@keyframes fadeLandIn {
+  0% {
+    scale: 1.5;
+    opacity: .0;
+  }
+
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+.fade-land-in {
+  animation: fadeLandIn 1s forwards;
+}
