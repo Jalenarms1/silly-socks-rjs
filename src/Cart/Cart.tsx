@@ -124,7 +124,7 @@ const Cart = ({isSuccess = false}: {isSuccess?: boolean}) => {
                             <div key={ci.id} className='rounded-md border border-zinc-200 flex items-start gap-2'>
                                 <img src={ci.product.image} alt='cart item' className='w-20 h-20 object-fill p-2 bg-yellow-300 shadow-md'/>
                                 <div className="flex flex-col gap-2">
-                                    <p className='text-base font-semibold text-red-500'>{ci.product.label}</p>
+                                    <p className='text-base font-semibold text-red-500'>{ci.product.name}</p>
                                     <div className="flex items-center gap-4 flex-1">
                                         <p onClick={() => removeFromCart(ci.product, true)} className='px-2 border rounded-sm border-zinc-300'>-</p>
                                         <p className='text-sm'>{ci.quantity}</p>
